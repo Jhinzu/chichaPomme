@@ -8,6 +8,7 @@
     {
         $mysqlClient = new PDO("mysql:host=$serveur;dbname=chichapomme;charset=utf8", $login , $pass);
         echo "ca marche !";
+        echo "bonjour diego";
     }
 
      catch(Exception $e)
