@@ -29,8 +29,8 @@ function ajout($ref,$nom,$resum,$prixAchat,$prixVente,$quantite)
     try 
     {
         $con = getDatabaseConnexion();
-        $insert = "INSERT INTO tabChichaPomme (`ID`, `Référence`, `Description`, `Prix d'achat unitaire`, `Prix de vente unitaire`, `Quantité`) 
-        VALUES ('$ref','$nom','$resum','$prixAchat,'$prixVente','$quantite')";
+        $insert = "INSERT INTO `tabChichaPomme`(`Référence`, `Nom article`, `Description`, `Prix d'achat unitaire`, `Prix de vente unitaire`, `Quantité`)
+        VALUES ('$ref','$nom','$resum','$prixAchat','$prixVente','$quantite')";
 
         $con->exec($insert);
     }

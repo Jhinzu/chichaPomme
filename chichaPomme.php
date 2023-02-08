@@ -2,6 +2,16 @@
 include("requeteSQL.php");
 include("tableaux.php");
 $AllItems = getAllUsers();
+$ref = $_POST["ref"] ?? null;
+$nom = $_POST["nomArticle"] ?? null;
+$resum = $_POST["resum"] ?? null;
+$prixAchat = $_POST["prixAchat"] ?? null;
+$prixVente = $_POST["venteAchat"] ?? null;
+$quantite = $_POST["venteAchat"] ?? null;
+if (!empty($ref) && !empty($nom) && !empty($resum) && !empty($prixAchat) && !empty($prixVente) && !empty($quantite))
+{
+ajout($ref,$nom,$resum,$prixAchat,$prixVente,$quantite);
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,17 +31,17 @@ $AllItems = getAllUsers();
     ?>
     <form>
         <label>Référence</label>
-        <input type="text" placeholder="Référence"/>
+        <input name="ref" type="text" placeholder="Référence"/>
         <label>Le nom de l'article</label>
-        <input type="text" placeholder="Le nom de l'article"/>
+        <input name="nomArticle" type="text" placeholder="Le nom de l'article"/>
         <label>La description de l'article</label>
-        <input type="text" placeholder="La description de l'article"/>
+        <input name="resum" type="text" placeholder="La description de l'article"/>
         <label>Le prix d'achat unitaire</label>
-        <input type="text" placeholder="Le prix d'achat unitaire"/>
+        <input name="prixAchat" type="text" placeholder="Le prix d'achat unitaire"/>
         <label>Le prix de vente unitaire</label>
-        <input type="text" placeholder="Le prix de vente unitaire"/>
+        <input name="venteAchat" type="text" placeholder="Le prix de vente unitaire"/>
         <label>La quantité en stock</label>
-        <input type="text" placeholder="La quantité en stock"/>
+        <input name="stock" type="text" placeholder="La quantité en stock"/>
         <button type="submit" >entrée</button>
     </form>
 
